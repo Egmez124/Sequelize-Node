@@ -9,7 +9,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       idCliente: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Clientes',
+          key: 'id'
+        }
       },
       fecha: {
         type: Sequelize.DATE
