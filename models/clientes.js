@@ -5,15 +5,15 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Clientes extends Model {
     static associate(models) {
-      this.hasMany(models.Pago, {
+      this.hasMany(models.Pagos, {
         foreignKey:"idCliente"
       });
       this.hasMany(models.Clases, {
         foreignKey:"idCliente"
       });
-      this.hasOne(models.Membrecia, {
-        foreignKey:"idMembrecias"
-      });
+      // this.belongsTo(models.Membrecias, {
+      //   foreignKey:"idCliente"
+      // });
     }
   };
   Clientes.init({

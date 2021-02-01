@@ -4,11 +4,7 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Instructores extends Model {
-    
     static associate(models) {
-      this.belongsTo(models.Clases, {
-        foreignKey: "id"
-      });
       this.belongsToMany(models.Horarios, {
         through: "Horarios_Instructores",
         foreignKey: "idHorario"
@@ -16,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Instructores.init({
-    idClase: DataTypes.INTEGER,
     nombre: DataTypes.STRING,
     apellido: DataTypes.STRING
   }, {

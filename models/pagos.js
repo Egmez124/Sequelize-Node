@@ -3,19 +3,20 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Pago extends Model {
+  class Pagos extends Model {
     static associate(models) {
       this.belongsTo(models.Clientes, {
-        foreignKey: "id"
+        foreignKey: "idCliente"
       });
     }
   };
-  Pago.init({
+  Pagos.init({
     idCliente: DataTypes.INTEGER,
-    fecha: DataTypes.DATE
+    fecha: DataTypes.DATE,
+    monto: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'Pago',
+    modelName: 'Pagos',
   });
-  return Pago;
+  return Pagos;
 };

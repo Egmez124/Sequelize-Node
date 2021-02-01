@@ -12,11 +12,14 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {
           model: 'Clientes',
-          key: 'id'
+          key:'id'
         }
       },
       fecha: {
         type: Sequelize.DATE
+      },
+      monto: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

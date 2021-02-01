@@ -12,10 +12,10 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {
           model: 'Clases',
-          key: 'id'
+          key:'id'
         }
       },
-      time: {
+      hora: {
         type: Sequelize.TIME
       },
       dia: {
