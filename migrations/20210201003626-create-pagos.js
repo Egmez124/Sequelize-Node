@@ -15,6 +15,13 @@ module.exports = {
           key:'id'
         }
       },
+      idMembrecia: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Membrecias',
+          key:'id'
+        }
+      },
       fecha: {
         type: Sequelize.DATE
       },

@@ -8,13 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      idCliente: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'Clientes',
-          key:'id'
-        }
-      },
       nombre: {
         type: Sequelize.STRING
       },

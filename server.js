@@ -5,11 +5,12 @@ require("dotenv").config();
 const PORT = process.env.PORT;
 const app = express();
 const {Clientes, Pagos, Membrecias} = require("./models");
-app.use(express.json()); 
+
+// app.use(express.json());
 
 app.get("/clientes", async (req, res)=>{
     try {
-        const results = await Clientes.findAll();
+        const results = await Clientes.findAll({include: [Pagos]});
          res.json(results); 
     } catch (error) {
         console.log(error);
@@ -18,7 +19,7 @@ app.get("/clientes", async (req, res)=>{
 
 app.get("/pagos", async (req, res)=>{
     try {
-        const results = await Pagos.findAll();
+        const results = await Pagos.findAll({include: [Clientes, Membrecias]});
          res.json(results); 
     } catch (error) {
         console.log(error);

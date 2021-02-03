@@ -8,6 +8,9 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.Clientes, {
         foreignKey: "idCliente"
       });
+      this.belongsTo(models.Membrecias, {
+        foreignKey: "idMembrecia"
+      });
     }
   };
   Pagos.init({

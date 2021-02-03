@@ -11,9 +11,6 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Clases, {
         foreignKey:"idCliente"
       });
-      // this.belongsTo(models.Membrecias, {
-      //   foreignKey:"idCliente"
-      // });
     }
   };
   Clientes.init({
